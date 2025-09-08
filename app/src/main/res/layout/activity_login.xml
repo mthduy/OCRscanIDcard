@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Hình góc trái trên -->
+    <ImageView
+        android:id="@+id/imgCorner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/shape1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+
+    <!-- Tiêu đề "ĐĂNG NHẬP" -->
+    <TextView
+        android:id="@+id/tvLoginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ĐĂNG NHẬP"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@id/imgCorner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Tên đăng nhập -->
+    <EditText
+        android:id="@+id/edtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên đăng nhập"
+        android:padding="12dp"
+        android:layout_below="@id/tvLoginTitle"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/edit_text"
+        android:inputType="textPersonName" />
+
+    <!-- Mật khẩu -->
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mật khẩu"
+        android:padding="12dp"
+        android:layout_below="@id/edtUsername"
+        android:layout_marginBottom="24dp"
+        android:background="@android:drawable/edit_text"
+        android:inputType="textPassword" />
+
+    <!-- Nút Đăng nhập -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập"
+        android:layout_below="@id/edtPassword"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_shape"
+        android:textColor="@color/white"
+        /> <!-- THÊM DÒNG NÀY -->
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng ký"
+        android:layout_below="@id/btnLogin"
+        android:background="@drawable/btn_shape"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        /> <!-- NẾU ĐÃ CÓ THÌ GIỮ -->
+
+</RelativeLayout>

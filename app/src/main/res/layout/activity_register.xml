@@ -1,0 +1,145 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".auth.RegisterActivity">
+
+    <!-- Ảnh góc trái phía trên -->
+    <ImageView
+        android:id="@+id/imgCorner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/shape1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <!-- Nút quay lại -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="25dp"
+        android:src="@drawable/baseline_arrow_back_24" />
+
+    <!-- Ảnh apartment căn giữa -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imgCorner"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/apartment" />
+
+    <!-- Họ tên -->
+    <EditText
+        android:id="@+id/edtFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="24dp"
+        android:hint="Họ tên"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
+
+    <!-- Tên đăng nhập -->
+    <EditText
+        android:id="@+id/edtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtFullName"
+        android:layout_marginTop="12dp"
+        android:hint="Tên đăng nhập"
+        android:inputType="textPersonName"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
+
+    <!-- Số điện thoại -->
+    <EditText
+        android:id="@+id/edtPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtUsername"
+        android:layout_marginTop="12dp"
+        android:hint="Số điện thoại"
+        android:inputType="phone"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
+
+    <!-- Gmail -->
+    <EditText
+        android:id="@+id/edtGmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtPhone"
+        android:layout_marginTop="12dp"
+        android:hint="Gmail"
+        android:inputType="textEmailAddress"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
+
+    <!-- Ngày sinh -->
+    <EditText
+        android:id="@+id/edtBirthDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtGmail"
+        android:layout_marginTop="12dp"
+        android:hint="Ngày sinh (dd/MM/yyyy)"
+        android:inputType="date"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
+
+    <!-- Giới tính -->
+    <RadioGroup
+        android:id="@+id/genderGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtBirthDate"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdoMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nam" />
+
+        <RadioButton
+            android:id="@+id/rdoFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Nữ" />
+    </RadioGroup>
+
+    <!-- Mật khẩu -->
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/genderGroup"
+        android:layout_marginTop="12dp"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
+
+    <!-- Nút Đăng ký -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtPassword"
+        android:layout_marginTop="24dp"
+        android:text="ĐĂNG KÝ"
+        android:background="@drawable/btn_shape"
+        android:textColor="@color/white"
+        android:padding="12dp" />
+
+</RelativeLayout>

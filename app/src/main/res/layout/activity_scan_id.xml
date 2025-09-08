@@ -1,0 +1,57 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="320dp"
+            android:layout_height="202dp"
+            android:layout_marginBottom="8dp"
+            android:background="#000"/>
+
+        <ImageView
+            android:id="@+id/ivCapturedImage"
+            android:layout_width="320dp"
+            android:layout_height="202dp"
+            android:layout_marginBottom="12dp"
+            android:scaleType="centerCrop"
+            android:background="#cccccc"/>
+
+        <Button
+            android:id="@+id/btnCapture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chụp CCCD" />
+
+        <Button
+            android:id="@+id/btnSendOCR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gửi qua OCR"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- Overlay ProgressBar -->
+    <FrameLayout
+        android:id="@+id/progressOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/progressBarOCR"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="64dp"
+            android:layout_height="64dp"/>
+    </FrameLayout>
+
+</FrameLayout>

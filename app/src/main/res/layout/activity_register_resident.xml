@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Nút back -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:contentDescription="Quay lại"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+    <!-- ScrollView chứa toàn bộ nội dung -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnBack">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Thông tin hợp đồng -->
+            <TextView
+                android:text="Thông tin Hợp đồng"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/etSoHopDong"
+                android:hint="Số hợp đồng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etNgayKy"
+                android:hint="Ngày ký"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etBenA"
+                android:hint="Bên A"
+                android:text="Ban Quản Lý Chung Cư XYZ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Thông tin cư dân (Bên B) -->
+            <TextView
+                android:text="Thông tin Cư dân (Bên B)"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/etHoTen"
+                android:hint="Họ tên"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etNgaySinh"
+                android:hint="Ngày sinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etGioiTinh"
+                android:hint="Giới tính"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etCCCD"
+                android:hint="CCCD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etQuequan"
+                android:hint="Quê quán"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etNoiThuongTru"
+                android:hint="Nơi thường trú"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etNgayHetHan"
+                android:hint="Ngày hết hạn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Nút chức năng -->
+            <Button
+                android:id="@+id/btnScanCCCD"
+                android:text="Quét CCCD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/btnSaveContract"
+                android:text="Lưu hợp đồng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+            <!-- Chữ ký cư dân -->
+            <TextView
+                android:text="Chữ ký cư dân"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.github.gcacace.signaturepad.views.SignaturePad
+                android:id="@+id/signaturePad"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"
+                android:background="#FFFFFF"/>
+
+            <Button
+                android:id="@+id/btnClearSignature"
+                android:text="Xóa chữ ký"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</RelativeLayout>
