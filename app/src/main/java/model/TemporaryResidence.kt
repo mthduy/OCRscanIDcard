@@ -6,5 +6,5 @@ data class TemporaryResidence(
     val startDate: String,
     val endDate: String,
     val reason: String,
-    val status: String
+    val status: String,
 )
