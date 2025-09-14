@@ -160,7 +160,7 @@ class ScanIDActivity : AppCompatActivity() {
             .build()
 
         val request = Request.Builder()
-            .url("http://192.168.1.11:8080/ocr")
+            .url("http://192.168.1.14:8080/ocr")
             .post(requestBody)
             .build()
 

@@ -14,6 +14,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.mthd.R
 import com.example.mthd.auth.LoginActivity
+import com.example.mthd.admin.ResidentListActivity
 import com.google.android.material.navigation.NavigationView
 import database.DatabaseHelper
 
@@ -29,7 +30,8 @@ class AdminMainActivity : AppCompatActivity() {
     private val functions = listOf(
         AdminFunction("Đăng ký cư dân mới", R.drawable.ic_register_user, RegisterResidentActivity::class.java),
         AdminFunction("Danh sách hợp đồng", R.drawable.ic_contract_list, ContractListActivity::class.java),
-        AdminFunction("Giấy tạm trú / tạm vắng", R.drawable.ic_temp_residence),
+        AdminFunction("Danh sách cư dân", R.drawable.architect, ResidentListActivity::class.java),
+        AdminFunction("Giấy tạm trú / tạm vắng", R.drawable.ic_temp_residence, AdminTempResidenceActivity::class.java),
         AdminFunction("Tạo thông báo", R.drawable.ic_notice,AdminCreateNotificationActivity::class.java)
     )
     private fun loadAdminName() {

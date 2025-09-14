@@ -9,7 +9,7 @@ class DatabaseHelper(context: Context) :
 
     companion object {
         const val DATABASE_NAME = "app_db"
-        const val DATABASE_VERSION = 7
+        const val DATABASE_VERSION = 9
 
         // Bảng users (đã có)
         const val TABLE_USERS = "users"
@@ -50,6 +50,14 @@ class DatabaseHelper(context: Context) :
         const val COL_TITLE = "title"
         const val COL_MESSAGE = "message"
         const val COL_CREATED_AT = "created_at"
+
+        // Temporary residence
+        const val TABLE_TEMP_RESIDENCE = "temporary_residence"
+        const val COL_TR_ID = "tr_id"
+        const val COL_START_DATE = "start_date"
+        const val COL_END_DATE = "end_date"
+        const val COL_REASON = "reason"
+        const val COL_STATUS = "status" // pending / received
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -96,6 +104,9 @@ class DatabaseHelper(context: Context) :
                 'Admin', '000000000', '01/01/2000', 
                 'admin', '123', 'admin', 'admin@example.com'
             )
+            
+            
+            
         """
         db.execSQL(insertAdmin)
 
@@ -124,6 +135,19 @@ class DatabaseHelper(context: Context) :
 """
         db.execSQL(createNotificationsTable)
 
+        val createTempResidenceTable = """
+            CREATE TABLE $TABLE_TEMP_RESIDENCE (
+                $COL_TR_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                $COL_RESIDENT_ID INTEGER NOT NULL,
+                $COL_START_DATE TEXT,
+                $COL_END_DATE TEXT,
+                $COL_REASON TEXT,
+                $COL_STATUS TEXT DEFAULT 'pending',
+                FOREIGN KEY($COL_RESIDENT_ID) REFERENCES $TABLE_RESIDENTS($COL_RESIDENT_ID)
+            )
+        """
+        db.execSQL(createTempResidenceTable)
+
 
     }
 
@@ -133,6 +157,7 @@ class DatabaseHelper(context: Context) :
         db.execSQL("DROP TABLE IF EXISTS $TABLE_RESIDENTS")
         db.execSQL("DROP TABLE IF EXISTS $TABLE_CONTRACTS")
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NOTIFICATIONS")
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_TEMP_RESIDENCE")
         onCreate(db)
     }
 }

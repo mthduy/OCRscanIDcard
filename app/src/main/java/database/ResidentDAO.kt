@@ -173,6 +173,35 @@ class ResidentDAO(private val context: Context) {
         db.close()
         return result
     }
+    fun getAllResidents(): List<Resident> {
+        val residents = mutableListOf<Resident>()
+        val db = dbHelper.readableDatabase
+        val cursor = db.query(
+            DatabaseHelper.TABLE_RESIDENTS,
+            null,
+            null, null, null, null, null
+        )
+
+        if (cursor.moveToFirst()) {
+            do {
+                val resident = Resident(
+                    residentId = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_RESIDENT_ID)),
+                    fullName = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_HO_TEN)),
+                    birthDate = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_NGAY_SINH)),
+                    sex = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_GIOI_TINH)),
+                    idNumber = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_CCCD)),
+                    origin = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_QUE_QUAN)),
+                    residence = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_NOI_THUONG_TRU)),
+                    expiry = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_NGAY_HET_HAN)),
+                    signature = cursor.getBlob(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_SIGNATURE))
+                )
+                residents.add(resident)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return residents
+    }
 
 
 }

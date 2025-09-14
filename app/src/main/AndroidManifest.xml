@@ -31,14 +31,23 @@
         <activity android:name="com.example.mthd.admin.AdminCreateNotificationActivity" />
         <activity android:name="com.example.mthd.admin.ContractListActivity" />
         <activity android:name="com.example.mthd.admin.ContractDetailActivity" />
+        <activity android:name="com.example.mthd.admin.AdminTempResidenceActivity" />
+        <activity android:name="com.example.mthd.admin.ResidentListActivity" />
+        <activity android:name="com.example.mthd.admin.ResidentDetailActivity" />
+
+
+
         <activity android:name=".user.UserProfileActivity" />
+
+
+
 
         <!-- User -->
         <!-- User -->
         <activity android:name="com.example.mthd.user.UserMainActivity" />
         <activity android:name="com.example.mthd.user.MyContractsActivity" />
         <activity android:name="com.example.mthd.user.UserNotificationsActivity" />
-
+        <activity android:name="com.example.mthd.user.RegisterTempResidenceActivity" />
 
 
         <!-- Auth -->

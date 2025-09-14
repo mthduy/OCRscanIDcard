@@ -47,6 +47,25 @@ class UserDAO(context: Context) {
         db.close()
         return exists
     }
+    // Lấy tên user từ residentId
+    fun getUserNameByResidentId(residentId: Int): String? {
+        val db = dbHelper.readableDatabase
+        val cursor = db.query(
+            DatabaseHelper.TABLE_USERS,
+            arrayOf(DatabaseHelper.COL_FULLNAME),
+            "${DatabaseHelper.COL_RESIDENT_ID} = ?",
+            arrayOf(residentId.toString()),
+            null, null, null
+        )
+
+        var name: String? = null
+        if (cursor.moveToFirst()) {
+            name = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_FULLNAME))
+        }
+        cursor.close()
+        db.close()
+        return name
+    }
 
     // Đăng nhập user
     fun loginUser(username: String, password: String): User? {
@@ -75,6 +94,7 @@ class UserDAO(context: Context) {
         db.close()
         return user
     }
+
 
 
 }
